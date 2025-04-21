@@ -1,0 +1,29 @@
+# Entorno virtual de Python
+.venv/
+venv/
+
+# Archivos de CDK
+cdk.out/
+*.js
+*.d.ts
+node_modules/
+
+# Archivos de IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Archivos generados por AWS CDK
+**/asset.*.zip
+**/cdk.context.json
+
+# Archivos temporales y logs
+*.log
+*.tmp
+
+# Archivos personales
+.DS_Store
+
+aws/
+__pycache__
