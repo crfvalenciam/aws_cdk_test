@@ -3,7 +3,11 @@
 
 a. Instalar AWS CDK
 bash
-npm install -g aws-cdk
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+    nvm install 20
+    nvm use 20
+    node -v
+    npm install -g aws-cdk
 
 c. Configurar Entorno Virtual (Python)
 bash
@@ -13,16 +17,22 @@ source .venv/bin/activate  # Linux/Mac
 
 2. Instalar Dependencias
 
-pip install aws-cdk-lib constructs
+pip install -r requirements
 
 
 3. Despliegue en AWS
+
+export AWS_ACCESS_KEY_ID='AWS_ACCESS_KEY_ID' #------------------ MODIFICAR VALOR 
+export AWS_SECRET_ACCESS_KEY='AWS_SECRET_ACCESS_KEY' #---------- MODIFICAR VALOR 
+export AWS_REGION='AWS_REGION' # MODIFICAR VALOR 
+aws sts get-caller-identity
+
 a. Bootstrap del Entorno (solo primera vez)
-    cdk bootstrap aws://TU_ACCOUNT_ID/us-east-1
+    cdk bootstrap aws://ACCOUNT_ID/us-east-1 #----------------- MODIFICAR VALOR 
 b. Desplegar el Stack
     cdk deploy
 
-4. Prueba de Funcionamiento
+1. Prueba de Funcionamiento
 bash
     aws s3 ls
 
